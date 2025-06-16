@@ -14,6 +14,11 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: priyasingh1/reverseproxy:v1
+          image: priyasingh1/reverseproxy:v4
           ports:
             - containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "250m"

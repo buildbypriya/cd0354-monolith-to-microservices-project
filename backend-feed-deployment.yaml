@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: priyasingh1/udagram-api-feed:v2
+          image: priyasingh1/udagram-api-feed:v4
           ports:
             - containerPort: 8080
           envFrom:
@@ -25,6 +25,11 @@ spec:
           volumeMounts:
             - name: aws-credentials
               mountPath: /root/.aws
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "250m"
       volumes:
         - name: aws-credentials
           secret:

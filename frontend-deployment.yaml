@@ -14,6 +14,11 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: priyasingh1/udagram-frontend:v1
+          image: priyasingh1/udagram-frontend:v4
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "250m"

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-user
-          image: priyasingh1/udagram-api-user:v1
+          image: priyasingh1/udagram-api-user:v4
           ports:
             - containerPort: 8080
           envFrom:
@@ -22,3 +22,15 @@ spec:
                 name: env-config
             - secretRef:
                 name: env-secret
+          volumeMounts:
+            - name: aws-credentials
+              mountPath: /root/.aws
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "250m"
+      volumes:
+        - name: aws-credentials
+          secret:
+            secretName: aws-secret
