@@ -1,9 +1,9 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 set_env.sh
-env-secret.yaml
-env-configmap.yaml
-aws-secret.yaml
+# env-secret.yaml
+# env-configmap.yaml
+# aws-secret.yaml
 *~
 *.sw[mnpcod]
 *.log
